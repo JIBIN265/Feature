@@ -1,0 +1,2 @@
+sap.ui.define([],function(){"use strict";return{toggleSideContent:function(t){this.showSideContent("customSectionQualifier")},toggleSideContentItem1:function(t){this.showSideContent("childEntities1Section")}}});
+//# sourceMappingURL=SideContent.js.map

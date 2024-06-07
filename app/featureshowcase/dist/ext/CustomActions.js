@@ -1,0 +1,2 @@
+sap.ui.define(["sap/m/MessageBox","sap/ui/core/library"],function(e,n){"use strict";return{messageBox:function(){e.alert("Button pressed")},enabled:function(){return true},enabledForSingleSelect:function(e,n){if(n&&n.length===1){return true}return false}}});
+//# sourceMappingURL=CustomActions.js.map

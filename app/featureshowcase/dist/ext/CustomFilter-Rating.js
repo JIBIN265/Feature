@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/model/Filter","sap/ui/model/FilterOperator"],function(e,t){"use strict";return{onReset:function(e){this.setFilterValues("starsValue")}}});
+//# sourceMappingURL=CustomFilter-Rating.js.map

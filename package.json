@@ -1,0 +1,90 @@
+{
+  "name": "featureshowcase",
+  "version": "1.0.0",
+  "description": "A simple CAP project to demonstrate different FEv4 List Report & Oject Page features.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SAP-samples/fiori-elements-featureshowcase.git"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.9.0",
+    "@sap-cloud-sdk/http-client": "^3.9.0",
+    "@sap-cloud-sdk/resilience": "^3.9.0",
+    "@sap-cloud-sdk/util": "^3.9.0",
+    "@sap/cds": "^7.9.2",
+    "@sap/cds-hana": "^2",
+    "@sap/cds-mtxs": "^1.9",
+    "@sap/eslint-plugin-cds": "^2.6.4",
+    "@sap/ux-cds-odata-language-server-extension": "^1.12.0",
+    "@sap/xssec": "^3",
+    "axios": "^1.6.4",
+    "cds": "^0.2.0",
+    "dotenv": "^16.3.1",
+    "express": "^4",
+    "passport": "^0",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1.4.0",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.1",
+    "cds-plugin-ui5": "^0.6.13",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "undeploy": "cf undeploy featureshowcase --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "clean": "rimraf \"**/*mta_archives\" \"**/*gen\" \"**/*resources\" \"**/*dist\" \"**/*node_modules\"",
+    "watch-featureshowcase": "cds watch --open produfeatureshowcasectcategory/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-child3": "cds watch --open child3/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "sapux": [
+    "app/featureshowcase",
+    "app/items3"
+  ],
+  "cds": {
+    "requires": {
+      "[development]": {
+        "kind": "sqlite",
+        "auth": "dummy",
+        "impl": "@cap-js/sqlite",
+        "credentials": {
+          "url": "memory"
+        }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      }
+    }
+  }
+}

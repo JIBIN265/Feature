@@ -1,0 +1,1 @@
+{"version":3,"file":"SideContent.js","names":["sap","ui","define","toggleSideContent","oBindingContext","this","showSideContent","toggleSideContentItem1","oContextInfo"],"sources":["SideContent-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,GAAI,WACf,aAEA,MAAO,CACJC,kBAAmB,SAASC,GACzBC,KAAKC,gBAAgB,yBACxB,EACAC,uBAAwB,SAASC,GAC9BH,KAAKC,gBAAgB,wBACxB,EAEN","ignoreList":[]}
